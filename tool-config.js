@@ -1,0 +1,52 @@
+export const tool = {
+  "id": "E038",
+  "title": "양단 힌지 기둥 오일러 좌굴하중 계산기",
+  "inputs_text": "영률 E [Pa], 약축 단면2차모멘트 I_min [m⁴], 기둥 길이 L [m]",
+  "formula": "P_cr = π² E I_min / L²",
+  "output_text": "이상 탄성 좌굴 임계하중 P_cr [N]",
+  "assumptions": "E,I_min,L>0. 양단 힌지·완전 직선·중심압축·길고 가는 기둥·탄성 범위에 한정한다. 실제 허용하중·설계기준 내력으로 표시하지 않는다.",
+  "purpose": "오일러 좌굴하중 / 세장 기둥 기초 실험",
+  "sources": [
+    {
+      "label": "University of Illinois · Buckling",
+      "url": "https://mechref.engr.illinois.edu/sol/buckling.html"
+    }
+  ],
+  "slug": "eng-euler-buckling",
+  "category": "재료",
+  "result_label": "이상 탄성 좌굴 임계하중 P_cr",
+  "result_dimension": "force",
+  "fields": [
+    {
+      "key": "e",
+      "label": "영률 E",
+      "dimension": "pressure",
+      "example": 200000000000.0,
+      "constraint": "positive",
+      "display_unit": "GPa",
+      "display_value": "200"
+    },
+    {
+      "key": "i",
+      "label": "약축 단면2차모멘트 I_min",
+      "dimension": "areaInertia",
+      "example": 1e-06,
+      "constraint": "positive",
+      "display_unit": "mm4",
+      "display_value": "1000000"
+    },
+    {
+      "key": "l",
+      "label": "힌지 사이 기둥 길이 L",
+      "dimension": "length",
+      "example": 2,
+      "constraint": "positive",
+      "display_unit": "m",
+      "display_value": "2"
+    }
+  ],
+  "site": "https://nanalab.kr/eng-euler-buckling/",
+  "repository": "https://github.com/NaNaCompany/eng-euler-buckling",
+  "condition": "",
+  "output_unit": "N"
+};
